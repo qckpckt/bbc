@@ -159,9 +159,9 @@ def save_temp_signature(user_name, signature):
 
 
 def gam_cmd():
-    command = 'gam csv mycsv gam user ~name signature file ~sendas'
-    command_with_alias = ['/bin/bash', '-i', '-c', command]
-    ret = subprocess.run(command_with_alias)
+    command = ['python', 'lib/GAM-3.71/src/gam.py', 'gam', 'csv', 'mycsv',
+              'gam', 'user', '~name', 'signature', 'file', '~sendas']
+    ret = subprocess.run(command)
     print(ret)
     if ret.returncode != 0:
         print('failed to upload signatures!')
