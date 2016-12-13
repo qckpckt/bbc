@@ -41,7 +41,3 @@ def test_export_to_csv():
     for expected, found in zip(rows, reader):
         for item in found:
             assert item in expected
-
-
-if __name__ == '__main__':
-    test_export_to_csv()
