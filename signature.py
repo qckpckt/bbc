@@ -5,7 +5,7 @@ import os
 import subprocess
 import re
 import sys
-import pandas as pd
+from util import export_to_csv
 
 import requests
 
@@ -231,6 +231,6 @@ if __name__ == '__main__':
         new_employee = Mobifyer(employee)
         mobifyers.append(new_employee.__dict__())
 
-    pd.DataFrame(mobifyers).to_csv('mycsv')
+    export_to_csv(mobifyers)
 
     gam_cmd()
