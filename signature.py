@@ -231,6 +231,6 @@ if __name__ == '__main__':
         new_employee = Mobifyer(employee)
         mobifyers.append(new_employee.__dict__())
 
-    export_to_csv(mobifyers)
+    export_to_csv(mobifyers, 'mycsv.csv')
 
     gam_cmd()
