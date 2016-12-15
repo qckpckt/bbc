@@ -5,7 +5,7 @@ import os
 import subprocess
 import re
 import sys
-import pandas as pd
+from util import export_to_csv
 
 import requests
 
@@ -159,7 +159,7 @@ def save_temp_signature(user_name, signature):
 
 
 def gam_cmd():
-    command = ['python', 'lib/GAM-3.71/src/gam.py', 'gam', 'csv', 'mycsv',
+    command = ['python', 'lib/GAM-3.71/src/gam.py', 'csv', 'mycsv',
               'gam', 'user', '~name', 'signature', 'file', '~sendas']
     ret = subprocess.run(command)
     print(ret)
@@ -231,6 +231,6 @@ if __name__ == '__main__':
         new_employee = Mobifyer(employee)
         mobifyers.append(new_employee.__dict__())
 
-    pd.DataFrame(mobifyers).to_csv('mycsv')
+    export_to_csv(mobifyers, 'mycsv.csv')
 
     gam_cmd()
