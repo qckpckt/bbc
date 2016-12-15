@@ -159,7 +159,7 @@ def save_temp_signature(user_name, signature):
 
 
 def gam_cmd():
-    command = ['python', 'lib/GAM-3.71/src/gam.py', 'gam', 'csv', 'mycsv',
+    command = ['python', 'lib/GAM-3.71/src/gam.py', 'csv', 'mycsv',
               'gam', 'user', '~name', 'signature', 'file', '~sendas']
     ret = subprocess.run(command)
     print(ret)
