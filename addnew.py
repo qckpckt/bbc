@@ -3,7 +3,7 @@ import requests
 
 DEFAULT_HEADERS = {'Accept': 'application/json'}
 META_URL = 'https://api.bamboohr.com/api/gateway.php/mobify/v1/meta/fields/'
-USE_CELL = 'https://api.bamboohr.com/api/gateway.php/mobify/v1/employees/changed/?since={ISO 8601 timestamp}&type=inserted'
+CHANGED_SINCE = 'https://api.bamboohr.com/api/gateway.php/mobify/v1/employees/changed/?since={ISO 8601 timestamp}&type=inserted'
 ALEX_ID = '40597'
 
 token = os.getenv('BAMBOO_API_KEY')
