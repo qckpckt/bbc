@@ -14,3 +14,11 @@ BBBBBBBBBBBBBBBBBBBB    BBBBBBBBBBBBBBBBBBBB    CCCCCCCCCCCCCCCCCCCC
 BetterBetterCloud is a Python script that generates personalized email signatures
 from an HTML template. It pulls user information from Bamboo HR using an API call
 then publishes it to employee email accounts using Google Apps Manager.
+
+
+
+# Running Tests
+
+```python
+py.test tests.py
+```
