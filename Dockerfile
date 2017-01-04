@@ -4,8 +4,12 @@ RUN apt-get update && \
     apt-get install -y \
       python \
       python3 \
-      python3-pip && \
-    pip3 install -r requirements.txt
+      python3-pip
+
+COPY . /app
+WORKDIR /app
+RUN pip install --upgrade pip && \
+    pip3 install -r ./requirements.txt
 
 
 CMD bash
