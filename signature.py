@@ -210,20 +210,6 @@ def get_user_name(employee):
     email = employee['workEmail']
     return email.split('@')[0]
 
-# functions used to find specific users to test parts of the script
-
-# def find_alex(directory):
-#     return first(directory, condition=lambda x: x['id'] == '40597')
-#
-# def find_tessa(directory):
-#     return first(directory, condition=lambda x: x['id'] == '40481')
-
-def first(iterator, condition=None):
-    # lambda function used above in finding specific users
-    condition = (condition or (lambda x: True))
-    return next ((x for x in iterator if condition(x)))
-
-
 if __name__ == '__main__':
     directory = get_bamboo_directory()
     mobifyers = []
