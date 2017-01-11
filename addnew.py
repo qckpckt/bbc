@@ -7,7 +7,7 @@ from util import export_to_csv
 BAMBOO_TOKEN = os.getenv('BAMBOO_API_KEY')
 DEFAULT_HEADERS = {'Accept': 'application/json'}
 META_URL = 'https://api.bamboohr.com/api/gateway.php/mobify/v1/meta/fields/'
-CHANGED_SINCE_API = 'https://api.bamboohr.com/api/gateway.php/mobify/v1/employees/changed/?since={timestamp}'
+CHANGED_SINCE_API = 'https://api.bamboohr.com/api/gateway.php/mobify/v1/employees/changed/?since={timestamp}&type=updated'
 
 
 def whats_new():
@@ -20,16 +20,12 @@ def whats_new():
     resp = requests.get(url, auth=auth, headers = DEFAULT_HEADERS)
     directory = resp.json()
     return directory['employees']
-    # import pdb; pdb.set_trace()
 
 # def first(iterator, condition=None):
 #     # lambda function used above in finding specific users
 #     condition = (condition or (lambda x: True))
 #     return next ((x for x in iterator if condition(x)))
-#
-# def search_for_id(directory, user):
-#     found_it = first(directory, condition=lambda x: x['id'] == user)
-#     return found_it
+
 
 if __name__ == '__main__':
     updated_ids = whats_new()
