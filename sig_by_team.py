@@ -20,6 +20,6 @@ if __name__ == '__main__':
 
     export_to_csv(mobifyers, 'mycsv.csv')
 
-    # gam_cmd()
+    gam_cmd()
 
     # import pdb; pdb.set_trace()
