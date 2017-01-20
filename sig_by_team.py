@@ -16,9 +16,8 @@ if __name__ == '__main__':
     while True:
         team_name = input("Which team would you like to change the signature for? \n To see a list of possible entries, type 'list': ")
         if team_name == 'list':
-        for i in all_teams:
-            print(i)
-            print("Which tean would you like to change the signature for? \n To see a list of all possible entries, type 'list': ")
+            for i in all_teams:
+                print(i)
             continue
         if team_name not in all_teams and team_name != 'list':
             print("sorry, that's not a valid choice. Please try again. ")
