@@ -9,7 +9,22 @@ def get_team(data, team):
 
 
 if __name__ == '__main__':
-    team_name = input("Which Team would you like to change the signature for? \n EXACT NAME ONLY: ")
+    all_teams = ['Customer Success', 'Finance & Operations', 'Global Services',
+                'Marketing', 'People', 'Product Engineering', 'Product Experience',
+                'Sales', 'Strategy']
+
+    while True:
+        team_name = input("Which team would you like to change the signature for? \n To see a list of possible entries, type 'list': ")
+        if team_name == 'list':
+        for i in all_teams:
+            print(i)
+            print("Which tean would you like to change the signature for? \n To see a list of all possible entries, type 'list': ")
+            continue
+        if team_name not in all_teams and team_name != 'list':
+            print("sorry, that's not a valid choice. Please try again. ")
+        else:
+            break
+
     data = sig.get_bamboo_directory()
     team_list = get_team(data, team_name)
 
