@@ -34,6 +34,6 @@ if __name__ == '__main__':
 
     export_to_csv(mobifyers, 'mycsv.csv')
 
-    gam_cmd()
+    sig.gam_cmd()
 
     # import pdb; pdb.set_trace()

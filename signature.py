@@ -187,8 +187,8 @@ def find_sendas_email(sendas):
 
 class Mobifyer:
 
-    def __init__(self, directory_record):
-        with open ('template1.html') as f:
+    def __init__(self, directory_record, signature_template):
+        with open (signature_template) as f:
             template = f.read()
         self.name = get_user_name(directory_record)
         print('username is {}'.format(self.name))
@@ -214,7 +214,7 @@ if __name__ == '__main__':
     directory = get_bamboo_directory()
     mobifyers = []
     for employee in directory:
-        new_employee = Mobifyer(employee)
+        new_employee = Mobifyer(employee, 'template1.html')
         mobifyers.append(new_employee.__dict__())
 
     export_to_csv(mobifyers, 'mycsv.csv')
