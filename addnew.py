@@ -49,7 +49,7 @@ if __name__ == '__main__':
             if user == employee['id']:
                 filtered_directory.append(employee)
     for employee in filtered_directory:
-        new_employee = signature.Mobifyer(employee)
+        new_employee = signature.Mobifyer(employee, 'template1.html')
         mobifyers.append(new_employee.__dict__())
 
     export_to_csv(mobifyers, 'mycsv.csv')
