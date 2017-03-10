@@ -187,8 +187,8 @@ def find_sendas_email(sendas):
 
 class Mobifyer:
 
-    def __init__(self, directory_record):
-        with open ('template1.html') as f:
+    def __init__(self, directory_record, signature_template):
+        with open (signature_template) as f:
             template = f.read()
         self.name = get_user_name(directory_record)
         print('username is {}'.format(self.name))
@@ -210,25 +210,11 @@ def get_user_name(employee):
     email = employee['workEmail']
     return email.split('@')[0]
 
-# functions used to find specific users to test parts of the script
-
-# def find_alex(directory):
-#     return first(directory, condition=lambda x: x['id'] == '40597')
-#
-# def find_tessa(directory):
-#     return first(directory, condition=lambda x: x['id'] == '40481')
-
-def first(iterator, condition=None):
-    # lambda function used above in finding specific users
-    condition = (condition or (lambda x: True))
-    return next ((x for x in iterator if condition(x)))
-
-
 if __name__ == '__main__':
     directory = get_bamboo_directory()
     mobifyers = []
     for employee in directory:
-        new_employee = Mobifyer(employee)
+        new_employee = Mobifyer(employee, 'template1.html')
         mobifyers.append(new_employee.__dict__())
 
     export_to_csv(mobifyers, 'mycsv.csv')
