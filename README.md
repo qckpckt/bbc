@@ -15,10 +15,19 @@ BetterBetterCloud is a Python script that generates personalized email signature
 from an HTML template. It pulls user information from Bamboo HR using an API call
 then publishes it to employee email accounts using Google Apps Manager.
 
+#Dependencies
 
+`Gam-3.7` (included in /lib, but you will need to authorize before it will work: https://github.com/jay0lee/GAM/wiki/CreatingClientSecretsFile). When prompted to enter a command using GAM, please note that the docker container does not have gam aliased. The path is `/lib/GAM-3.71/src/gam.py`.
 
-# Running Tests
+`Bamboo API key` https://www.bamboohr.com/api/documentation/ follow instructions here under 'Authorization'. Create a .env file in the top level directory. The Docker instance will import the environment variable for you. `signature.py` expects an environment variable called `BAMBOO_API_KEY`.
 
-```python
-py.test tests.py
+#Build
+
+`docker build -t bbc .`
+
+#Run
+
 ```
+docker run -it -p 8000:8000 -v `pwd`:/app --env-file .env bbc_new:latest
+```
+Note - the port arguments are to allow you to check the generated signatures. They are not needed for normal operations and can be omitted.
