@@ -1,6 +1,6 @@
 .env
 lib/GAM-3.71/src/client_secrets.json
 lib/GAM-3.71/src/oauth2service.json
-.DS_Store
+.DS_Store*
 __pycache__
 mycsv.csv
