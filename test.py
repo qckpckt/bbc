@@ -17,6 +17,17 @@ def get_employee(data):
             print('No employee exists for that ID. Please try again. ')
         return employee
 
+def should_set_sig():
+    answers = ['yes', 'no']
+    while True:
+        user_in = input('Do you wish to upload this signature file? Answer "yes" or "no": ')
+        if user_in not in answers:
+            print('Sorry, input not recognised. Answer "yes" or "no": ')
+        if user_in == 'yes':
+            sig.gam_cmd()
+        else:
+            break
+
 if __name__ == '__main__':
     sig_file = input('Enter the filepath for the signature file you wish to upload. ')
     data = sig.get_bamboo_directory()
@@ -27,4 +38,4 @@ if __name__ == '__main__':
 
     export_to_csv(sig_list, 'mycsv.csv')
 
-    sig.gam_cmd()
+    should_set_sig()
