@@ -23,13 +23,13 @@ if __name__ == '__main__':
             print("sorry, that's not a valid choice. Please try again. ")
         else:
             break
-
+    sig_file = input('Enter the filepath for the signature file you wish to upload. ')
     data = sig.get_bamboo_directory()
     team_list = get_team(data, team_name)
 
     mobifyers = []
     for person in team_list:
-        new_employee = sig.Mobifyer(person)
+        new_employee = sig.Mobifyer(person, sig_file)
         mobifyers.append(new_employee.__dict__())
 
     export_to_csv(mobifyers, 'mycsv.csv')
