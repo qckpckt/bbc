@@ -25,6 +25,7 @@ def should_set_sig():
             print('Sorry, input not recognised. Answer "yes" or "no": ')
         if user_in == 'yes':
             sig.gam_cmd()
+            break
         else:
             break
 
